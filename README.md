@@ -4,7 +4,17 @@ Public snapshot of Alarming, a synchronizing alarm clock application.
 
 This initial version was created to practice securely implementing various APIs and methods of storing data.
 
-### Setup
+[screenshot](https://raw.githubusercontent.com/Patricol/alarming-public/master/screenshots/basic.png)
+
+### Table of Contents
+* [Setup](#Setup)
+* [Features](#Features)
+* [Trust Model](#Trust_Model)
+* [Threat Model](#Threat_Model)
+
+
+
+### Setup <a name="Setup"></a>
 * To use the synchronization features, create a Firebase project.
   * add google-services.json to the /app folder etc.
   * enable authentication
@@ -13,7 +23,8 @@ This initial version was created to practice securely implementing various APIs 
     * set the rules as listed in Cloud_Firestore_Rules.txt
     * add a collection named "users"
 
-### Features
+
+### Features <a name="Features"></a>
 * Alarming is secure alarm clock application for Android; providing multiple ways to backup and synchronize your settings.
   * Alarming allows you to create an alarm at a specified date and time, with a description and multiple possible options for how it can be disabled.
     * You can simply disable it with the press of a button, or you can require that your phone be in a certain location before the alarm can be disabled.
@@ -29,7 +40,7 @@ This initial version was created to practice securely implementing various APIs 
   * Alarms can be set and tested with any combination of settings.
 
 
-### Trust Model
+### Trust Model <a name="Trust_Model"></a>
   * User:
     * I'm trusting the user to not be a malicious actor.
     * I'm trusting the user to not root their device.
@@ -45,7 +56,7 @@ This initial version was created to practice securely implementing various APIs 
     * I'm trusting that the device's storage is not completely full, etc.
 
 
-### Threat Model
+### Threat Model <a name="Threat_Model"></a>
   * I'm assuming that the attacker does not have physical access to the device.
   * I'm assuming that the attacker does control a non-root process installed on the device, and can send instructions and exfiltrate data via the network.
   * The attacker's motive is to access the user's location data, which is sometimes stored alongside other settings in exported or uploaded settings.
